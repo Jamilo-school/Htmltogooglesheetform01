@@ -13,7 +13,7 @@ body{
 
 .container {
   position:relative;
-  padding: 25px;
+  padding: 5px;
   margin-right: 30px;
   transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 
@@ -233,11 +233,13 @@ a {
   #title{
     border-radius: 30px;
     color: #fff;
-    rotate: -89deg;
-    left: -90px;
-    top: 40%;
+    rotate: 0deg;
+    left: 10px;
+    width: 100%;
+top: -30px;
     background-image: linear-gradient(45deg,rgb(31, 33, 164) 5, 36),rgb(61, 7, 68);
     border-top-right-radius: 0;
+    border-top-left-radius: 0;
    
   }
 }
