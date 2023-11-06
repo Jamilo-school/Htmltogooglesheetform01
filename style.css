@@ -25,6 +25,8 @@ body{
   
 }
 .sections{
+ 
+  border-radius: 30px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -36,12 +38,14 @@ select{
 #title{
 position: absolute;
   background-color: rgb(11, 11, 74);
-padding: 8px;
+padding: 15px;
+margin-top: 30px;
 border-radius: 30px;
 border-top-right-radius: 0;
+border-top-left-radius: 0;
 color: #fff;
-left: 35px;
-top: 100px;
+left: 43%;
+top: -38px;
 text-align: center;
 transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 -webkit-box-shadow: -3px -3px 5px white, 3px 3px 5px rgba(209, 209, 209, 0.705);
@@ -210,8 +214,8 @@ a {
     grid-template-columns: repeat(2,1fr);
   }
   #title{
-    rotate: -50deg;
-    left: 10px;
+    rotate: 0deg;
+    left: 40%;
   }
 }
 @media (max-width: 639px) {
@@ -240,7 +244,7 @@ a {
     color: #fff;
     rotate: 0deg;
     left: 10px;
-    width: 100%;
+    width: 99%;
 top: -30px;
     background-image: linear-gradient(45deg,rgb(31, 33, 164) 5, 36),rgb(61, 7, 68);
     border-top-right-radius: 0;
