@@ -56,9 +56,10 @@ label{
   margin-left: 30px;
 }
 option{
-  background-color: rgb(230, 235, 235);
+  background-color: rgb(5, 5, 60);
   border: none;
-  font-family: monospace;
+  font-family: 'Times New Roman', Times, serif;
+  color: #fff;
 }
 
 .hero {
