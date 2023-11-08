@@ -74,6 +74,7 @@ option{
 }
 .input.submit{
   width: 200px;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
 .hero {
@@ -126,6 +127,7 @@ option{
   background-color: inherit;
   color: rgb(161, 161, 161);
   font-size: inherit;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
 .submit , .btn {
