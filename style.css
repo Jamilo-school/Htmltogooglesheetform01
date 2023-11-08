@@ -52,6 +52,7 @@ transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
           box-shadow: -3px -3px 5px white, 3px 3px 5px rgba(209, 209, 209, 0.705);
 
 }
+
 label,details{
   margin-left: 30px;
 }
