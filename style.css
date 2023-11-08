@@ -52,14 +52,28 @@ transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
           box-shadow: -3px -3px 5px white, 3px 3px 5px rgba(209, 209, 209, 0.705);
 
 }
-label{
+label,details{
   margin-left: 30px;
+}
+details{
+  color: #d5d1d1;
+}
+
+.info{
+  font-size: 13px;
+color:  #d5d1d1;
+transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+
+
 }
 option{
   background-color: rgb(5, 5, 60);
   border: none;
   font-family: 'Times New Roman', Times, serif;
   color: #fff;
+}
+.input.submit{
+  width: 200px;
 }
 
 .hero {
