@@ -98,6 +98,9 @@ option{
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+          background-image: url(./img/pc.jpg);
+          backdrop-filter: blur(5px);
+          background-size: cover;
   background-color: #f7f7f7;
 }
 
