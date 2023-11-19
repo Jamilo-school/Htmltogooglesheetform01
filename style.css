@@ -44,6 +44,7 @@ border-radius: 30px;
 border-top-right-radius: 0;
 border-top-left-radius: 0;
 color: #fff;
+font-size: 17px;
 left: 43%;
 top: -38px;
 text-align: center;
@@ -73,9 +74,13 @@ option{
   font-family: 'Times New Roman', Times, serif;
   color: #fff;
 }
+.input:hover{
+  color: #dcdada;
+}
 .input.submit{
   width: 200px;
   transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+
 }
 
 .hero {
