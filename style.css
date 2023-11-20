@@ -33,8 +33,10 @@ body{
 }
 select{
   text-transform: capitalize;
+
  
 }
+
 #title{
 position: absolute;
   background-color: rgb(11, 11, 74);
