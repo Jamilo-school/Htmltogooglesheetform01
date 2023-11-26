@@ -81,6 +81,16 @@ body{
 
 
 }
+.swal2-icon.swal2-success {
+  border-color: #d3cccc;
+  color: #fff;
+}
+div.swal2-success-ring{
+border-color: red;
+}
+.swal2-success-line-long{
+  border-color: red;
+}
 .swal2-popup{
   border: 2px solid gray;
   background-size: cover;

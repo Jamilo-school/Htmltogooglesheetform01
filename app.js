@@ -27,7 +27,7 @@ form.addEventListener('submit', e => {
                 // Redirect the user to the Google Workspace website after 2 seconds
                 setTimeout(() => {
                     window.location.href = './Vida.webm';
-                }, 2000);
+                }, 2000000);
             } else {
                 Swal.fire({
                     title: 'Error!',
