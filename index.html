@@ -16,32 +16,52 @@
         
         <div class="hero">
             <form name="submit-to-google-sheet" class="form">
-                <p id="title"> Students Biodata  Capture<br>  For The Year 2024 </p><br><br> <br>
-           <p>Student InformatioN</p>
-               <div class="sections">
-               
+                <p id="title" > KCA University Students<br>Registered  Biodata <br> School of Law</b></p><br><br> <br>
+           <p class="formsectionA">🧑‍⚕️ Section A:<br>Student Information</p>
+          <img src="./img/me.jpg" class="mypic">
 
-            <div class="sub">
-                <label for=""> 🧑‍⚕️ Learner Full Name 💫</label>
-                <input type="text" name="Name" id="Name" class="input" placeholder="Surname,Christian and Other name">
-                </div>
+          <input type="search" name="" id="search" placeholder=" 🔍Search.. Alphabetical Order" class="input" onclick="(this)">
+               <div class="sections">
+                   
+                   <div class="sub">
+                       <label for=""> ⬆️Student  Full Name </label>
+                       <input type="text" class="input" placeholder="Surname,Christian and Other name" name="StudentFullName">
+                    </div>
+
+                    <div class="sub">
+                        <label for="">Students Admission No </label>
+                        <input type="text"  name="Admission No" class="input" placeholder="Not Found try searching again">
+                        </div>
 
                 <div class="sub">
-                <label for=""> 🐏 Level of Registration  </label>
-                <select name="Class" class="input">
-                    <option value=" 🧑‍⚕️ Daycare">🧑‍⚕️ Daycare</option>
-                    <option value="🧑‍⚕️Pre primary 1">🧑‍⚕️Pre primary 1</option>
-                   
+                <label for=""> ⬆️Gender 💫</label>
+              <select name="Gender" id="" class="input">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
                     
                 </select>
+                </div>
+            
+                <div class="sub">
+                <label for=""> 🐏 Admission Class  </label>
+                <input type="text" class="input" placeholder="Admission Class" name="Admission Class">
             </div>
+
             <div class="sub">
-                <label for=""> Your Assessment Number:💫</label>
+                <label for="">🐏Assessment Number:💫</label>
                 <input type="text" name="Assessment Number" id="Assessment Number" class="input" placeholder="Max  10 digits eg B000987787" title="gre">
-                <details><p class="info">For grade Three and above ⬆️ </p></details>
+                
+                    <details><p class="info">🕸️KNEC Verified Number⬆️ </p></details>
+        
                 </div>
             <div class="sub">
-                <label for=""> Enter Your Phone Number: 💫</label>
+                <label for="">U.P.I Number:💫</label>
+                <input type="text" name="U.P.I" id="UPI Number" class="input" placeholder="Eg XD45B0987787" title="gre">
+                </div>
+
+                
+            <div class="sub">
+                <label for=""> ⬆️Phone Number: 💫</label>
                 <input type="tel" name="Phone Number:" class="input" placeholder="254 - xxx - xxxx or 07 - xxx - xx..">
                 </div>
                 <div class="sub">
@@ -55,19 +75,48 @@
                     <option value="Mr Allan Tom Onyango">Mr Allan Tom Onyango</option>
                     
                 </select>
+                
                 </div>
+               
+                <div class="sub">
+                    <label for=""> Siblings</label>
+                    <textarea name="Siblings" class="input" required></textarea>
+                    </div>
+
+
+
                 </div>
-                <input type="submit" value="Register" class="input submit">
-            
+                <div class="container02">
+                    <p class="formsectionB">Section B: <br>Parent/Guardian Info;</p>
+                    <div class="sub">
+                    <label for=""> Parent/Guardian Name:💫</label>
+                    <input type="text" name="Parent/Guardian Name" id="Assessment Number" class="input" placeholder="Official Name">
+                    <details><p class="info">🕸️For Grade Three and above ⬆️ </p></details>
+                    </div>
+                    <div class="sub">
+                        <label for=""> Phone Number:💫</label>
+                        <input type="text" name="Phone Number" id="Phone Number" class="input" placeholder=" Active Phone Number" title="gre">
+                        <details><p class="info">🕸️For Grade Three and above ⬆️ </p></details>
+                        </div>
+
+                </div>
+
+
+                
+                <div class="resetsendbtns">
+                    <input type="reset" value="Clear form" class="input submit">
+                    <input type="submit" value="Register" class="input submit">
+            </div>
                 <p class="forgotten">Forgotten your login details ? <a href="#">Get help with signing in.</a></p>
-                <div class="or">or</div>
-                <div class="input btn">"Thank you"</div>
-                <p class="signup">Don't have an account ? <a href="#">Sign Up</a></p>
+                <div class="or">Credence</div>
+                <div class="input btn" id="Thanks">"Thank you"</div>
+            
 
             </form>
             
         </div>
     </div>
      <script src="app.js"></script>
+     <script src="app2.js"></script>
 </body>
 </html>
