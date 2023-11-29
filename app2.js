@@ -72,7 +72,7 @@ function handleNoDataFound() {
   Swal.fire({
     icon: 'error',
     title: 'No Matching Data Found!',
-    text: 'Please refine your search.',
+    text: 'Please refine your search by \n typing First two letters of the Christian name',
     timer: 5000, // Display alert for 5 seconds
   });
 }
