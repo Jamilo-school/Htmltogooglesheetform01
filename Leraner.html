@@ -60,12 +60,12 @@
 </head>
 <body>
   <div class="container">
-    <h1>Class Learners Information</h1>
+    <h1>STUDENTS BIODATA</h1>
 
     <label for="classSelect">Select Class:</label>
     <select id="classSelect" onchange="displayLearners()">
-      <option value="classA">Class A</option>
-      <option value="classB">Class B</option>
+      <option value="GradeSix">GradeSix</option>
+      <option value="GradeFive">GradeFive</option>
       <!-- Add more classes as needed -->
     </select>
 
@@ -79,63 +79,76 @@
       <!-- Biodata will be displayed here -->
     </div>
   </div>
+  <a href="./Pdf/slip 2023/Lizzy Achieng.pdf"></a>
 
   <script>
     const learners = {
-      classA: [
-        { name: "John Doe", age: 18, grade: "A" },
-        { name: "Jane Smith", age: 17, grade: "B" },
-        // Add more learners for Class A
-      ],
-      classB: [
-        { name: "Alice Johnson", age: 16, grade: "A+" },
-        { name: "Bob Brown", age: 17, grade: "B+" },
-        // Add more learners for Class B
-      ],
-      // Add more classes with learners as needed
+        GradeSix: [
+            { name: "John Doe", age: 18, grade: "A", fileURL: "./Pdf/slip 2023/Clement Joseph.pdf" },
+            { name: "lizzyo Smith", age: 17, grade: "B", fileURL: "./Pdf/slip 2023/Lizzy Achieng.pdf" },
+            // Add more learners for Class A
+        ],
+        GradeFive: [
+            { name: "Alice Johnson", age: 16, grade: "A+" },
+            { name: "Bob Brown", age: 17, grade: "B+" },
+            // Add more learners for Class B
+        ],
+        // Add more classes with learners as needed
     };
 
     function displayLearners() {
-      const selectedClass = document.getElementById("classSelect").value;
-      const learnerSelect = document.getElementById("learnerSelect");
-      learnerSelect.innerHTML = ""; // Clear previous options
+        const selectedClass = document.getElementById("classSelect").value;
+        const learnerSelect = document.getElementById("learnerSelect");
+        learnerSelect.innerHTML = ""; // Clear previous options
 
-      learners[selectedClass].forEach((learner, index) => {
-        const option = document.createElement("option");
-        option.value = index;
-        option.textContent = learner.name;
-        learnerSelect.appendChild(option);
-      });
+        learners[selectedClass].forEach((learner, index) => {
+            const option = document.createElement("option");
+            option.value = index;
+            option.textContent = learner.name;
+            learnerSelect.appendChild(option);
+        });
 
-      // Display biodata for the first learner by default
-      displayBiodata();
+        // Display biodata for the first learner by default
+        displayBiodata();
     }
 
     function capitalizeString(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
+        return str.charAt(0).toUpperCase() + str.slice(1);
     }
 
     function displayBiodata() {
-      const selectedClass = document.getElementById("classSelect").value;
-      const selectedLearnerIndex = document.getElementById("learnerSelect").value;
-      const biodataDiv = document.getElementById("learnerBiodata");
-      const selectedLearner = learners[selectedClass][selectedLearnerIndex];
+        const selectedClass = document.getElementById("classSelect").value;
+        const selectedLearnerIndex = document.getElementById("learnerSelect").value;
+        const biodataDiv = document.getElementById("learnerBiodata");
+        const selectedLearner = learners[selectedClass][selectedLearnerIndex];
 
-      biodataDiv.innerHTML = ""; // Clear previous biodata
+        biodataDiv.innerHTML = ""; // Clear previous biodata
 
-      // Display biodata with keys and values capitalized in a grid layout
-      for (const [key, value] of Object.entries(selectedLearner)) {
-        const capitalizedKey = capitalizeString(key);
-        const capitalizedValue = capitalizeString(value.toString());
-        
-        const p = document.createElement("p");
-        p.textContent = `${capitalizedKey}: ${capitalizedValue}`;
-        biodataDiv.appendChild(p);
-      }
+        // Display biodata with keys and values capitalized in a grid layout
+        for (const [key, value] of Object.entries(selectedLearner)) {
+            if (key !== "fileURL") { // Exclude displaying fileURL
+                const capitalizedKey = capitalizeString(key);
+                const capitalizedValue = capitalizeString(value.toString());
+
+                const p = document.createElement("p");
+                p.textContent = `${capitalizedKey}: ${capitalizedValue}`;
+                biodataDiv.appendChild(p);
+            }
+        }
+
+        // Check if the selected learner has a fileURL and create a download link
+        if (selectedLearner.fileURL) {
+            const downloadLink = document.createElement("a");
+            downloadLink.href = selectedLearner.fileURL;
+            downloadLink.textContent = "Download Slip";
+            downloadLink.download = ""; // This attribute triggers download
+            biodataDiv.appendChild(downloadLink);
+        }
     }
 
     // Initial population of learner dropdown based on default class
     displayLearners();
   </script>
+
 </body>
 </html>
