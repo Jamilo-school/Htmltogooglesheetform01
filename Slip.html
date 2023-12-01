@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Search and Download</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      text-align: center;
+  
+    }
+
+    input[type="search"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    #searchResults {
+      display: inline-flex;
+      margin-top: 10px;
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    #searchResults ul {
+      list-style-type: none;
+      padding: 0;
+      display: grid;
+      transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+    
+  
+    
+    }
+
+    #searchResults li {
+      cursor: pointer;
+      padding: 5px 10px;
+      background-color: #fff;
+      border-radius: 5px;
+      margin-bottom: 5px;
+  
+    }
+
+    #searchResults li:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <input type="search" id="searchInput" placeholder="Search by index number">
+  <div id="searchResults"></div>
+</div>
+
+<script>
+  const pdfArray = [
+    {
+      index: 2023,
+      files: [
+        { name: 'Clement Joseph', url: './Pdf/slip 2023/Clement Joseph.pdf' },
+        { name: 'Sample File 2.pdf', url: 'sample_pdf_2.pdf' }
+      ],
+    },
+    {
+      index: 2022,
+      files: [
+        { name: 'Another File 1.pdf', url: 'sample_pdf_3.pdf' },
+        { name: 'Another File 2.pdf', url: 'sample_pdf_4.pdf' },
+        { name: 'Another File 3.pdf', url: 'sample_pdf_5.pdf' }
+      ],
+    },
+    // Add more objects as needed
+  ];
+
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+
+  searchInput.addEventListener('input', function() {
+    const inputValue = searchInput.value.toLowerCase();
+    const filteredPDFs = pdfArray.filter(item => {
+      return String(item.index).includes(inputValue);
+    });
+
+    displaySearchResults(filteredPDFs);
+  });
+
+  function displaySearchResults(results) {
+    if (results.length > 0) {
+      searchResults.innerHTML = '';
+      searchResults.style.display = 'block';
+
+      const ul = document.createElement('ul');
+
+      results.forEach(item => {
+        const { index, files } = item;
+        const li = document.createElement('li');
+        li.textContent = `Online Result slips  ${index}:`;
+
+        const filesList = document.createElement('ul');
+        files.forEach((file, idx) => {
+          const fileLi = document.createElement('li');
+          fileLi.textContent = `${idx + 1}: ${file.name}`;
+          fileLi.addEventListener('click', () => downloadPDF(index, idx, file.name, file.url));
+          filesList.appendChild(fileLi);
+        });
+
+        li.appendChild(filesList);
+        ul.appendChild(li);
+      });
+
+      searchResults.appendChild(ul);
+    } else {
+      searchResults.innerHTML = '';
+      searchResults.style.display = 'none';
+      handleNoDataFound();
+    }
+  }
+
+  function downloadPDF(index, fileIndex, fileName, fileUrl) {
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.setAttribute('download', fileName);
+    link.click();
+  }
+
+  function handleNoDataFound() {
+    Swal.fire({
+      icon: 'error',
+      title: 'File not found!',
+      text: 'No files found for the searched index.',
+      showConfirmButton: false,
+      timer: 5000 // 2 seconds
+    });
+  }
+</script>
+
+</body>
+</html>
