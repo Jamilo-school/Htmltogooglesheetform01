@@ -16,7 +16,7 @@
 }
 .formsectionB{
   position: absolute;
-  top: 56%;
+  top: 61%;
   left: 40px;
   background-image: url(./img/new.jpg);
   background-size: cover;
@@ -485,7 +485,7 @@ background-clip: text;
     grid-template-columns: repeat(3,1fr);
   }
   .formsectionB{
-    top: 61%;
+    top: 65%;
   }
 }
 
@@ -522,7 +522,7 @@ background-clip: text;
     left: 40%;
   }
   .formsectionB{
-    top: 64%;
+    top: 67%;
   }
 }
 
@@ -602,7 +602,7 @@ background-clip: text;
   .formsectionB{
     position: absolute;
     overflow-y: hidden;
-    top: 84%;
+    top: 75%;
     left: 40px;
     width:160px;
     background-image: url(./img/new.jpg);
