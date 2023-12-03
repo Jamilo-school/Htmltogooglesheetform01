@@ -12,6 +12,7 @@ const defaultData = [
     ClassTeacher: "🧑‍⚕️ Mr Oduor Geofrey Onyango",
     ParentGuardianName: "ADARA MADoe",
     ParentGuardianPhoneNumber: "6th-july-1998",
+    Siblings:"jane",
     FileUrl1: "./Pdf/slip 2023/Clement Joseph.pdf",
     FileUrl2: "URL_to_PDF_2_for_Abeka",
     FileUrl3: "URL_to_PDF_2_for_Abeka",
@@ -64,21 +65,27 @@ function populateForm(data) {
   document.querySelector('select[name="🐏 Class Teacher"]').value = data.ClassTeacher || '';
   document.querySelector('input[name="Parent/Guardian Name"]').value = data.ParentGuardianName || '';
   document.querySelector('input[name="Phone Number"]').value = data.ParentGuardianPhoneNumber || '';
+  document.querySelector('textarea[name="Siblings"]').value = data.Siblings || '';
 
    // Disable form fields after populating with data
    disableFormFields();
+// Generate download links for PDFs
 // Generate download links for PDFs
 for (let i = 1; i <= 3; i++) {
   const fileUrl = data[`FileUrl${i}`];
   if (fileUrl) {
     const link = document.createElement('a');
     link.href = fileUrl;
-    link.textContent = `Download File ${i}`;
-    
+
     // Extracting the file name from the URL
     const fileName = fileUrl.substring(fileUrl.lastIndexOf('/') + 1);
-    
-    link.download = `${fileName}`;
+
+    link.textContent = `${fileName}`; // Display the filename as link text
+
+    link.download = fileName; // Set download attribute with the extracted file name
+    document.body.appendChild(link); // Append the link to the document body or desired container
+ 
+
 
     // link.download = `${data.StudentFullName}_${fileName}`;
 

@@ -128,8 +128,9 @@ transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
   #fileDownload1,#fileDownload2,#fileDownload3{
     
-  width: 120px;
+  width: 140px;
   height: 15px;
+  text-align: center;
 }
 
 
