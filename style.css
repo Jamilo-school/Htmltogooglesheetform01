@@ -103,8 +103,9 @@ right: 100px;
   color: red;
 }
 img{
-  height: 60px;
-  width: 40px;
+  height: 90px;
+  width: 80px;
+  border: 1px solid yellow;
 }
 .mypic{
   height: 60px;
@@ -113,24 +114,27 @@ img{
   border-radius: 4px;
   border: px solid yellow;
   top: 4px;
-  right: 30px;
+  right: 50px;
 
 }
 .mypic:hover{
-  transform: scale(3.1);
+  transform: scale(1.6);
 justify-content: center;
-border: 1px solid gray;
-margin-right: 50px;
-margin-top: 60px;
+border: 1px solid yellow;
+margin-right: 40px;
+margin-top: 20px;
 position: absolute;
 z-index: 1;
 transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
   #fileDownload1,#fileDownload2,#fileDownload3{
     
-  width: 140px;
+  width: 180px;
   height: 15px;
   text-align: center;
+  background-color: red;
+  color: #000000;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
 
@@ -598,7 +602,7 @@ background-clip: text;
   .formsectionB{
     position: absolute;
     overflow-y: hidden;
-    top: 72%;
+    top: 84%;
     left: 40px;
     width:160px;
     background-image: url(./img/new.jpg);
@@ -617,12 +621,15 @@ background-clip: text;
       display: grid;
       grid-template-columns: repeat(1,1fr);
     }
+    .img{
+      top: -24px;
+    }
   .mypic{
     height: 60px;
     width: 40px;
     position: absolute;
     top: 84px;
-    left: 200px;
+    right: 84px;
     transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
   }
 }

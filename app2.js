@@ -13,7 +13,7 @@ const defaultData = [
     ParentGuardianName: "ADARA MADoe",
     ParentGuardianPhoneNumber: "6th-july-1998",
     Siblings:"jane",
-    FileUrl1: "./Pdf/slip 2023/Clement Joseph.pdf",
+    FileUrl1: "./Pdf/slip 2023/Clement leaving Cert.pdf",
     FileUrl2: "URL_to_PDF_2_for_Abeka",
     FileUrl3: "URL_to_PDF_2_for_Abeka",
     FileUrl4: "./img/me.jpg",
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initially hide download link containers and learner image container
   const downloadContainers = document.querySelectorAll('[id^="fileDownload"]');
   downloadContainers.forEach(container => {
-    container.style.display = 'block';
+    container.style.display = 'none';
   });
 
   const learnerImageContainer = document.getElementById('learnerImages');
