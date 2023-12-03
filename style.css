@@ -16,7 +16,7 @@
 }
 .formsectionB{
   position: absolute;
-  top: 46%;
+  top: 56%;
   left: 40px;
   background-image: url(./img/new.jpg);
   background-size: cover;
@@ -80,19 +80,7 @@ transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
   border-radius: 8px;
    transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
-.formsectionB{
-  position: absolute;
-  top: 46%;
-  left: 40px;
-  background-image: url(./img/new.jpg);
-  background-size: cover;
-  backdrop-filter: blur(5px);
-  background-color: rgb(11, 11, 74);
-  color: #fff;
-  padding: 10px;
-  border-radius: 8PX;
-   transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
-}
+
 
 #search{
 width: 11%;
@@ -114,6 +102,10 @@ right: 100px;
   backdrop-filter: blur(50px);
   color: red;
 }
+img{
+  height: 60px;
+  width: 40px;
+}
 .mypic{
   height: 60px;
   width: 40px;
@@ -134,6 +126,12 @@ position: absolute;
 z-index: 1;
 transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
+  #fileDownload1,#fileDownload2,#fileDownload3{
+    
+  width: 120px;
+  height: 15px;
+}
+
 
 
 body{
@@ -481,8 +479,8 @@ background-clip: text;
     display: grid;
     grid-template-columns: repeat(3,1fr);
   }
-  .sectionB{
-    top: 47%;
+  .formsectionB{
+    top: 61%;
   }
 }
 
@@ -518,8 +516,8 @@ background-clip: text;
     rotate: 0deg;
     left: 40%;
   }
-  .sectionB{
-    top: 53%;
+  .formsectionB{
+    top: 64%;
   }
 }
 
@@ -599,7 +597,7 @@ background-clip: text;
   .formsectionB{
     position: absolute;
     overflow-y: hidden;
-    top: 59%;
+    top: 72%;
     left: 40px;
     width:160px;
     background-image: url(./img/new.jpg);

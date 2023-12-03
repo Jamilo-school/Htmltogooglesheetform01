@@ -1,48 +1,57 @@
 // Define default data
 const defaultData = [
-    {
-      StudentFullName:  "Abeka ",
-      AdmissionNo:"39741064001",
-      Gender:"Male",
-      AdmissionClass: "Form Four west",
-      AssessmentNumber: "B000123456",
-      UPI: "A00090090",
-      PhoneNumber: "254909000999",
-      OfficialEmail: "Allanohn@example.com",
-      ClassTeacher: "🧑‍⚕️ Mr Oduor Geofrey Onyango",
-      ParentGuardianName: "ADARA MADoe",
-      ParentGuardianPhoneNumber: "6th-july-1998"
-    },
-    {
-      StudentFullName: "eje Apondi Obadha",
-      AdmissionNo:"kssko",
-      Gender:"Female",
-      AdmissionClass: "ppppp",
-      AssessmentNumber: "B000156",
-      UPI: "B00098",
-      PhoneNumber: "0922",
-      OfficialEmail: "shwhn@example.com",
-      ClassTeacher: "Mr Allan Tom Onyango",
-      ParentGuardianName: "dmsk Doe",
-      ParentGuardianPhoneNumber: "4-yyy-yyyy"
-    },
-    {
-      StudentFullName: "ej",
-      AdmissionNo:"kssko",
-      Gender:"Female",
-      AdmissionClass: "🧑‍⚕️ Form One",
-      AssessmentNumber: "B00300006",
-      UPINumber: "B000987787",
-      PhoneNumber: "254-xxx-xxxx",
-      OfficialEmail: "john@example.comoeeeeeeeeeeeeee",
-      ClassTeacher: "Mr Allan Tom Onyango",
-      ParentGuardianName: "Jane Doe",
-      ParentGuardianPhoneNumber: "254-yyy-yyyy"
-    },
-    // Add more default data objects as needed
-  ];
-  
- // Function to populate the form with data
+  {
+    StudentFullName: "Abeka",
+    AdmissionNo: "39741064001",
+    Gender: "Male",
+    AdmissionClass: "Form Four west",
+    AssessmentNumber: "B000123456",
+    UPI: "A00090090",
+    PhoneNumber: "254909000999",
+    OfficialEmail: "Allanohn@example.com",
+    ClassTeacher: "🧑‍⚕️ Mr Oduor Geofrey Onyango",
+    ParentGuardianName: "ADARA MADoe",
+    ParentGuardianPhoneNumber: "6th-july-1998",
+    FileUrl1: "./Pdf/slip 2023/Clement Joseph.pdf",
+    FileUrl2: "URL_to_PDF_2_for_Abeka",
+    FileUrl3: "URL_to_PDF_2_for_Abeka",
+    FileUrl4: "./img/me.jpg",
+   
+  },
+  {
+    StudentFullName: "eje Apondi Obadha",
+    AdmissionNo: "kssko",
+    Gender: "Female",
+    AdmissionClass: "ppppp",
+    AssessmentNumber: "B000156",
+    UPI: "B00098",
+    PhoneNumber: "0922",
+    OfficialEmail: "shwhn@example.com",
+    ClassTeacher: "Mr Allan Tom Onyango",
+    ParentGuardianName: "dmsk Doe",
+    ParentGuardianPhoneNumber: "4-yyy-yyyy",
+    FileUrl1: "URL_to_PDF_1_for_eje_Apondi_Obadha",
+    FileUrl2: "URL_to_PDF_2_for_eje_Apondi_Obadha",
+    FileUrl3: "URL_to_PDF_3_for_eje_Apondi_Obadha",
+  },
+  // Add more default data objects as needed
+];
+
+
+
+// Function to disable all form fields
+function disableFormFields() {
+  const form = document.querySelector('form');
+  const formInputs = form.querySelectorAll('input, select, textarea');
+
+  formInputs.forEach(input => {
+    if (input !== document.querySelector('input[type="search"]')) {
+      input.disabled = true;
+    }
+  });
+}
+
+// Function to populate the form with data and create download links
 function populateForm(data) {
   document.querySelector('input[name="StudentFullName"]').value = data.StudentFullName || '';
   document.querySelector('input[name="Admission No"]').value = data.AdmissionNo || '';
@@ -56,8 +65,54 @@ function populateForm(data) {
   document.querySelector('input[name="Parent/Guardian Name"]').value = data.ParentGuardianName || '';
   document.querySelector('input[name="Phone Number"]').value = data.ParentGuardianPhoneNumber || '';
 
-  // Populate other form fields similarly
+   // Disable form fields after populating with data
+   disableFormFields();
+// Generate download links for PDFs
+for (let i = 1; i <= 3; i++) {
+  const fileUrl = data[`FileUrl${i}`];
+  if (fileUrl) {
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.textContent = `Download File ${i}`;
+    
+    // Extracting the file name from the URL
+    const fileName = fileUrl.substring(fileUrl.lastIndexOf('/') + 1);
+    
+    link.download = `${fileName}`;
+
+    // link.download = `${data.StudentFullName}_${fileName}`;
+
+    const container = document.getElementById(`fileDownload${i}`);
+    container.innerHTML = ''; // Clear previous content
+    container.appendChild(link);
+
+    // Show the container
+    container.style.display = 'block';
+  }
 }
+
+
+// Display learner images (FileUrl4)
+  const learnerImageContainer = document.getElementById('learnerImages');
+  const learnerImageUrl = data.FileUrl4;
+  if (learnerImageUrl) {
+    const img = document.createElement('img');
+    img.src = learnerImageUrl;
+    img.alt = `${data.StudentFullName}'s Image`;
+    
+    learnerImageContainer.innerHTML = ''; // Clear previous content
+    learnerImageContainer.appendChild(img);
+    
+    // Show the image container
+    learnerImageContainer.style.display = 'block';
+  }
+}
+
+// Other functions remain the same...
+
+// Rest of your code...
+
+
 
 // Function to filter data based on the first three letters of the input (e.g., name)
 function filterDataByName(StudentFullName) {
@@ -123,4 +178,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputValue = event.target.value.trim();
     handleLiveFiltering(inputValue);
   });
+
+  // Initially hide download link containers and learner image container
+  const downloadContainers = document.querySelectorAll('[id^="fileDownload"]');
+  downloadContainers.forEach(container => {
+    container.style.display = 'block';
+  });
+
+  const learnerImageContainer = document.getElementById('learnerImages');
+  learnerImageContainer.style.display = 'none';
 });
