@@ -2,10 +2,11 @@
 const defaultData = [
   {
     StudentFullName: "Abeka",
-    AdmissionNo: "39741064001",
+    AdmissionNo: "23/001",
+    IndexNo:"39741064001",
+    AssessmentNumber: "Not a CBC Student",
     Gender: "Male",
     AdmissionClass: "Form Four west",
-    AssessmentNumber: "B000123456",
     UPI: "A00090090",
     PhoneNumber: "254909000999",
     OfficialEmail: "Allanohn@example.com",
@@ -33,7 +34,7 @@ const defaultData = [
     ParentGuardianPhoneNumber: "4-yyy-yyyy",
     FileUrl1: "URL_to_PDF_1_for_eje_Apondi_Obadha",
     FileUrl2: "URL_to_PDF_2_for_eje_Apondi_Obadha",
-    FileUrl3: "URL_to_PDF_3_for_eje_Apondi_Obadha",
+    FileUrl4: "./img/StsPic/lex.jpg",
   },
   // Add more default data objects as needed
 ];
@@ -56,6 +57,7 @@ function disableFormFields() {
 function populateForm(data) {
   document.querySelector('input[name="StudentFullName"]').value = data.StudentFullName || '';
   document.querySelector('input[name="Admission No"]').value = data.AdmissionNo || '';
+  document.querySelector('input[name="IndexNo"]').value = data.IndexNo || '';
   document.querySelector('select[name="Gender"]').value = data.Gender || '';
   document.querySelector('input[name="Admission Class"]').value = data.AdmissionClass || '';
   document.getElementById('Assessment Number').value = data.AssessmentNumber || '';
