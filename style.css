@@ -27,6 +27,16 @@
   border-radius: 8PX;
    transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
+#Entry{
+  position: absolute;
+  top: -2px;
+  width: 40px;
+align-items: center;
+  left: 350px;
+  color: black;
+  font-weight: bolder;
+  transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
 
 #search{
 width: 11%;
@@ -105,6 +115,7 @@ img{
   height:70px;
   width: 105px;
   border: 2px solid yellow;
+  position: absolute;
 
  
 }
@@ -130,13 +141,21 @@ transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
   #fileDownload1,#fileDownload2,#fileDownload3{
   
-  border-radius: 18px ;
-  border-top-left-radius: 0;
+  border-radius: 10px ;
+  backdrop-filter: blur(50000px);
   height: 15px;
   text-align: center;
-  background: linear-gradient(45deg,#87adfe,#ff1cac);
-  color: #fff;
+background-color: transparent;
+  color: #fafafa;
   transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+#fileDownload1:active{
+  transform: scale(0.93);
+}
+#fileDownload2:active{
+  transform: scale(0.93);
+}#fileDownload3:active{
+  transform: scale(0.93);
 }
 
 

@@ -1,12 +1,13 @@
 // Define default data
 const defaultData = [
   {
+    Entry:"01/15",
     StudentFullName: "Abeka",
     AdmissionNo: "23/001",
     IndexNo:"39741064001",
     AssessmentNumber: "Not a CBC Student",
     Gender: "Male",
-    AdmissionClass: "Form Four west",
+    AdmissionClass: "Class One",
     UPI: "A00090090",
     PhoneNumber: "254909000999",
     OfficialEmail: "Allanohn@example.com",
@@ -55,6 +56,7 @@ function disableFormFields() {
 
 // Function to populate the form with data and create download links
 function populateForm(data) {
+  document.querySelector('input[name="Entry"]').value = data.Entry || '';
   document.querySelector('input[name="StudentFullName"]').value = data.StudentFullName || '';
   document.querySelector('input[name="Admission No"]').value = data.AdmissionNo || '';
   document.querySelector('input[name="IndexNo"]').value = data.IndexNo || '';
@@ -191,9 +193,10 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initially hide download link containers and learner image container
   const downloadContainers = document.querySelectorAll('[id^="fileDownload"]');
   downloadContainers.forEach(container => {
-    container.style.display = 'none';
+    container.style.display = 'block';
   });
 
   const learnerImageContainer = document.getElementById('learnerImages');
   learnerImageContainer.style.display = 'none';
+
 });
