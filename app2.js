@@ -23,13 +23,14 @@ const defaultData = [
    
   },
   {
-    StudentFullName: "eje Apondi Obadha",
+    StudentFullName: "Abondi Obadha",
     AdmissionNo: "kssko",
     Gender: "Female",
     AdmissionClass: "ppppp",
     AssessmentNumber: "B000156",
     UPI: "B00098",
     PhoneNumber: "0922",
+    Siblings: "0922",
     OfficialEmail: "shwhn@example.com",
     ClassTeacher: "Mr Allan Tom Onyango",
     ParentGuardianName: "dmsk Doe",
