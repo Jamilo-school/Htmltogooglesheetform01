@@ -16,7 +16,7 @@ const defaultData = [
     FileUrl1: "./Pdf/slip 2023/Clement Joseph.pdf",
     FileUrl2: "URL_to_PDF_2_for_Abeka",
     FileUrl3: "URL_to_PDF_2_for_Abeka",
-    FileUrl4: "./img/me.jpg",
+    FileUrl4: "./img/StsPic/abeka.jpg",
    
   },
   {
@@ -193,5 +193,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   const learnerImageContainer = document.getElementById('learnerImages');
-  learnerImageContainer.style.display = 'block';
+  learnerImageContainer.style.display = 'none';
 });
