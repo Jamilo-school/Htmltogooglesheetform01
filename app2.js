@@ -1,13 +1,14 @@
 // Define default data
 const defaultData = [
   {
-    Entry:"01/15",
+    Entry:"👁️01",
     StudentFullName: "Abeka",
     AdmissionNo: "23/001",
     IndexNo:"39741064001",
     AssessmentNumber: "Not a CBC Student",
     Gender: "Male",
     AdmissionClass: "Class One",
+    ClassOf:"2023",
     UPI: "A00090090",
     PhoneNumber: "254909000999",
     OfficialEmail: "Allanohn@example.com",
@@ -62,6 +63,7 @@ function populateForm(data) {
   document.querySelector('input[name="IndexNo"]').value = data.IndexNo || '';
   document.querySelector('select[name="Gender"]').value = data.Gender || '';
   document.querySelector('input[name="Admission Class"]').value = data.AdmissionClass || '';
+  document.querySelector('input[name="ClassOf"]').value = data.ClassOf || '';
   document.getElementById('Assessment Number').value = data.AssessmentNumber || '';
   document.querySelector('input[name="U.P.I"]').value = data.UPI || '';
   document.querySelector('input[type="tel"]').value = data.PhoneNumber || '';
