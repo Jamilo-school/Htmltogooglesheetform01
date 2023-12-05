@@ -76,6 +76,7 @@ function populateForm(data) {
 
    // Disable form fields after populating with data
    disableFormFields();
+   
 // Generate download links for PDFs
 // Generate download links for PDFs
 for (let i = 1; i <= 3; i++) {
@@ -187,11 +188,77 @@ function handleLiveFiltering(inputValue) {
 
 document.addEventListener('DOMContentLoaded', function() {
   const searchInput = document.querySelector('input[type="search"]');
+  let noDataAlertShown = false;
 
+  // Function to generate a list of StudentFullName
+  function generateStudentList(studentNames, title, count) {
+    studentNames.sort(); // Sort the names alphabetically
+    Swal.fire({
+      title: `${title} (${count})`,
+      input: 'select',
+      inputOptions: studentNames.reduce((options, name, index) => {
+        options[index] = name;
+        return options;
+      }, {}),
+      inputPlaceholder: 'Select a student',
+      showCancelButton: true,
+      didOpen: () => {
+        const selectInput = Swal.getInput();
+        selectInput.addEventListener('change', function(event) {
+          const selectedIndex = event.target.value;
+          const selectedStudent = defaultData[selectedIndex];
+          populateForm(selectedStudent);
+        });
+      },
+    });
+  }
+
+  // Function to handle no data found scenario with SweetAlert
+  function handleNoDataFound() {
+    if (!noDataAlertShown) {
+      Swal.fire({
+        icon: 'error',
+        title: 'No Matching Data Found!',
+        text: 'Please refine your search by typing the first two letters of the Christian name',
+        timer: 5000,
+        didClose: () => {
+          noDataAlertShown = false;
+          const inputValue = searchInput.value.trim();
+          if (inputValue.length >= 2) {
+            const studentNames = defaultData.map(student => student.StudentFullName);
+            generateStudentList(studentNames, 'Registered Learners', studentNames.length);
+          }
+        },
+      });
+      noDataAlertShown = true;
+    }
+  }
+
+  // Function to handle live filtering and form population
+  function handleLiveFiltering(inputValue) {
+    if (inputValue.length < 2) {
+      noDataAlertShown = false;
+      return; // If less than 3 characters, do not perform filtering or show the pop-up
+    }
+
+    const filteredData = filterDataByName(inputValue);
+
+    if (filteredData.length > 0) {
+      const studentNames = filteredData.map(student => student.StudentFullName);
+      generateStudentList(studentNames, 'Matching Names', filteredData.length);
+      noDataAlertShown = false;
+    } else {
+      handleNoDataFound();
+    }
+  }
+
+  // Event listeners for input changes
   searchInput.addEventListener('input', function(event) {
     const inputValue = event.target.value.trim();
     handleLiveFiltering(inputValue);
   });
+
+
 
   // Initially hide download link containers and learner image container
   const downloadContainers = document.querySelectorAll('[id^="fileDownload"]');
