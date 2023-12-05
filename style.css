@@ -140,13 +140,14 @@ filter: contrast(1.3);
 transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
   #fileDownload1,#fileDownload2,#fileDownload3{
-  
+ border: 3px solid #fafafa9c;
   border-radius: 10px ;
   backdrop-filter: blur(50000px);
   height: 15px;
   text-align: center;
-background-color: transparent;
-  color: #fafafa;
+  color: #a3a2a2;
+ font-family: georgia;
+    background-color: #f7f7f7d4;
   transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 #fileDownload1:active{
@@ -254,8 +255,6 @@ div:where(.swal2-container) div:where(.swal2-popup) {
   
 }
 .sections{
-
-  border-radius: 30px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -405,7 +404,8 @@ Input[type=search]{
           box-shadow: inset 6px 6px 8px rgba(97, 97, 97, 0.075),
     6px 6px 6px rgba(255, 255, 255, 0.781);
   outline: none;
-  background-color: #f7f7f7;
+  background-color: #f7f7f7ae;
+  /* background-color: #f7f7f7; */
   color: rgb(161, 161, 161);
   font-size: inherit;
   transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
