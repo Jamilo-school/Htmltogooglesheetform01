@@ -88,7 +88,7 @@ const defaultData = [
     const password = prompt('Enter password to download:', '');
   
     // Replace 'YOUR_PASSWORD_HERE' with the actual password you want to set
-    const correctPassword = 'YOUR_PASSWORD_HERE';
+    const correctPassword = 'papa';
   
     if (password === correctPassword) {
       // If the entered password matches, initiate the download
