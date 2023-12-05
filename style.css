@@ -145,6 +145,7 @@ transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
  border: 3px solid #fafafa9c;
   border-radius: 10px ;
   backdrop-filter: blur(50000px);
+  cursor: pointer;
   height: 15px;
   text-align: center;
   color: #a3a2a2;
@@ -407,7 +408,7 @@ Input[type=search]{
     6px 6px 6px rgba(255, 255, 255, 0.781);
   outline: none;
   background-color: #f7f7f7ae;
-  /* background-color: #f7f7f7; */
+  background-color: #f7f7f7;
   color: rgb(161, 161, 161);
   font-size: inherit;
   transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
@@ -533,6 +534,9 @@ background-clip: text;
     background-size: cover;
     
     }
+    #Entry{
+      left: 340px;
+    }
 }
 
 
@@ -541,6 +545,9 @@ background-clip: text;
   .sections,.container02{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+  }
+  #Entry{
+    left: 175px;
   }
   
 .mypic{
@@ -587,6 +594,8 @@ background-clip: text;
   .input.input.submit{
     width:80%
   }
+
+  
  
   .hero {
     border-radius: 40px;
@@ -674,8 +683,19 @@ background-clip: text;
     height: 60px;
     width: 40px;
     position: absolute;
-    top: 7px;
-    left: 20px;
+    top: 25px;
+    left: -8px;
     transition: all 0.8s cubic-bezier(0.15, 0.83, 0.66, 1);
   }
+  #Entry{
+    top: -26px;
+   left: -25px;
+   height: 2px;
+   box-shadow: none;}
+   .title {
+    text-align: right;
+   }
+  
+  
+ 
 }
